@@ -1,0 +1,511 @@
+:root{
+
+    --main_color:#ea9bec;
+    --p_color:#7b7b7b;
+    --bg_color:#eee2ef;
+    --white_color:#fff;
+    --color_heading:#121416;
+    --border_color:#e5e5e5d5;
+    --Sale_color:#E51A1A;
+
+}
+
+
+
+/* HERO */
+
+.hero{
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 8%;
+
+    background:linear-gradient(
+        120deg,
+        var(--bg_color),
+        var(--white_color)
+    );
+
+}
+
+
+
+.hero-content{
+
+    width:50%;
+
+}
+
+
+
+.hero span{
+
+    color:var(--main_color);
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+}
+
+
+
+.hero h1{
+
+    font-size:70px;
+
+    line-height:1.1;
+
+    color:var(--color_heading);
+
+    font-family:"Playfair Display",serif;
+
+}
+
+
+
+.hero p{
+
+    font-size:20px;
+
+    color:var(--p_color);
+
+    margin:30px 0;
+
+    line-height:1.7;
+
+}
+
+
+
+
+/* BUTTONS */
+
+
+.buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+
+
+.primary{
+
+    background:var(--main_color);
+
+    color:var(--white_color);
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+
+
+.primary:hover{
+
+    background:var(--color_heading);
+
+}
+
+
+
+.secondary{
+
+    border:1px solid var(--main_color);
+
+    color:var(--color_heading);
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+
+
+.secondary:hover{
+
+    background:var(--main_color);
+
+    color:white;
+
+}
+
+
+
+
+
+/* HERO IMAGE */
+
+
+.hero-image{
+
+    width:45%;
+
+}
+
+
+
+.hero-image img{
+
+    width:100%;
+
+    border-radius:30px;
+
+}
+
+/* PRODUCT CARD */
+/* =========================
+   PRODUCTS CONTAINER
+========================= */
+
+
+.big_cart{
+
+    width:100%;
+
+    display:flex;
+
+    gap:25px;
+
+    align-items:stretch;
+
+    justify-content:center;
+
+
+}
+
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+
+.product-card{
+
+
+    flex:1;
+
+
+    background:var(--white_color);
+
+
+    padding:20px;
+
+
+    border-radius:25px;
+
+
+    border:1px solid var(--border_color);
+
+
+    transition:.4s;
+
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+
+}
+
+
+
+
+.product-card:hover{
+
+
+    transform:translateY(-10px);
+
+
+    box-shadow:0 20px 40px rgba(234,155,236,.25);
+
+
+}
+
+
+
+
+
+/* =========================
+   IMAGE BOX
+========================= */
+
+
+.image-box{
+
+
+    position:relative;
+
+
+    height:350px;
+
+
+    overflow:hidden;
+
+
+    border-radius:20px;
+
+
+}
+
+
+
+
+
+.image-box img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    transition:.4s;
+}
+
+
+
+
+
+.product-card:hover img{
+
+
+    transform:scale(1.05);
+
+
+}
+
+
+
+
+
+/* =========================
+   SALE BADGE
+========================= */
+
+
+.sale{
+
+
+    position:absolute;
+
+
+    top:15px;
+
+
+    left:15px;
+
+
+
+    background:var(--Sale_color);
+
+
+    color:white;
+
+
+
+    padding:8px 15px;
+
+
+
+    border-radius:30px;
+
+
+
+    font-size:14px;
+
+
+
+    z-index:2;
+
+
+
+}
+
+
+
+
+
+
+/* =========================
+   WISHLIST
+========================= */
+
+
+.wishlist{
+
+
+    position:absolute;
+
+
+    right:15px;
+
+
+    top:15px;
+
+
+
+    width:40px;
+
+
+    height:40px;
+
+
+
+    border-radius:50%;
+
+
+
+    border:none;
+
+
+
+    background:var(--white_color);
+
+
+
+    color:var(--main_color);
+
+
+
+    font-size:22px;
+
+
+
+    cursor:pointer;
+
+
+
+}
+
+
+
+
+
+/* =========================
+   PRODUCT INFO
+========================= */
+
+
+.product-card h3{
+
+
+    color:var(--color_heading);
+
+
+    margin-top:20px;
+
+
+}
+
+
+
+
+
+.rating{
+
+
+    color:var(--main_color);
+
+
+    margin:10px 0;
+
+
+}
+
+
+
+
+
+.product-card p{
+
+
+    color:var(--main_color);
+
+
+    font-size:20px;
+
+
+    font-weight:bold;
+
+
+
+}
+
+
+
+
+
+/* =========================
+   BUTTON
+========================= */
+
+
+.product-card button{
+
+
+    margin-top:auto;
+
+
+    padding:12px;
+
+
+    border:none;
+
+
+    border-radius:30px;
+
+
+    background:var(--main_color);
+
+
+    color:white;
+
+
+    cursor:pointer;
+
+
+    font-size:16px;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+.product-card button:hover{
+
+
+    opacity:.8;
+
+
+}
+
+
+
+
