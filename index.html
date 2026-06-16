@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+<title>Abaya Shop</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body id="top">
+
+<!-- 🔵 NAVBAR -->
+<header class="navbar">
+
+  <div class="logo">
+    <img src="image/logo_bg_removed_black.png" alt="logo">
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search...">
+  </div>
+
+  <div class="auth-buttons">
+    <button class="login" onclick="openLogin()">Log In</button>
+    <button class="signup" onclick="openSignup()">Sign Up</button>
+  </div>
+  <!-- 🔵 POPUP LOGIN -->
+<div id="loginModal" class="modal">
+  <div class="modal-box">
+    <h2>Login</h2>
+    <input type="text" id="loginUser" placeholder="Username">
+    <input type="password" id="loginPass" placeholder="Password">
+    <button onclick="login()">Se connecter</button>
+    <span onclick="closeModal()">Fermer</span>
+  </div>
+</div>
+
+<!-- 🔵 POPUP SIGNUP -->
+<div id="signupModal" class="modal">
+  <div class="modal-box">
+    <h2>Sign Up</h2>
+    <input type="text" id="signupUser" placeholder="Username">
+    <input type="password" id="signupPass" placeholder="Password">
+    <button onclick="signup()">Créer compte</button>
+    <span onclick="closeModal()">Fermer</span>
+  </div>
+</div>
+
+</header>
+
+
+<nav class="nav_1">
+    <div class="nav_links">
+        <span class="close_menu"><i class="fa-regular fa-circle-xmark"></i></span>
+
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+</nav>
+
+
+<!-- 🔵 Cart OPEN/CLOSE 
+<div class="nav_cart">
+
+    <button class="nav_button" id="openButton">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+
+    <div class="inside_cart" id="navCart">
+
+        <button class="nav_button" id="closeButton">
+            <i class="fa-regular fa-circle-xmark"></i>
+            <span class="menu_1">More Information</span>
+        </button>
+
+        
+
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+</div>
+
+
+
+<div class="nav_cart">
+
+    <button class="nav_button" id="openButton">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+</div> 
+/* NAV CART */
+.nav_cart{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+
+/* MENU */
+.inside_cart{
+
+    position: fixed;
+    top:0;
+    left:-280px; /* مخفي */
+    width:280px;
+    height:490px;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    padding:30px 25px;
+    box-shadow:5px 0 20px rgba(0,0,0,0.15);
+    transition:0.4s ease;
+
+}
+
+
+/* OPEN */
+.inside_cart.active{
+    left:0;
+
+}
+
+
+/* buttons */
+.nav_button{
+    border:none;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
+    margin-bottom:30px;
+}
+
+
+/* close button */
+#closeButton{
+    align-self:flex-end;
+
+}
+
+
+/* title */
+.menu_1{
+    font-size:22px;
+    font-weight:600;
+    margin-bottom:25px;
+}
+
+
+
+/* links */
+.inside_cart a{
+    text-decoration:none;
+    color:#555;
+    font-size:20px;
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+    transition:0.3s;
+}
+
+
+.inside_cart a:hover{
+    color:#000;
+    padding-left:10px;
+}
+
+
+.inside_cart a.active{
+    color:#000;
+    font-weight:bold;
+
+}
+
+-->
+
+
+
+<!-- NAVBAR PRINCIPALE -->
+<div class="nav_2">
+    <!-- BOUTON OUVRIR -->
+    <div class="nav_2_1">
+        <button class="nav_button" id="openButton">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <span class="menu_1">
+            More Information
+        </span>
+    </div>
+    <!-- MENU -->
+    <div class="nav_2_2">
+        <div class="inside_cart" id="navCart">
+           <button class="nav_button" id="closeButton">
+                <i class="fa-regular fa-circle-xmark"></i>
+            </button>
+            <span class="menu_2">More Information</span>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="shop.html">Shop</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+    <!-- 🔵 COVER BANNER -->
+    <div class="banner_1">
+        <img src="image/banner_2.png" alt="">
+    </div>
+
+
+                
+
+
+    <!-- 🔵 ABAYA MODELS -->
+     <div class="barre_abaya_models">
+            <h2><i class="fa-solid fa-tags"></i> ABAYA MODELS</h2>
+        </div>
+    <div class="show_models">
+        <!-- 🔵 CART 1 -->
+        <div class="cart">
+            <a href="#"><img src="image/img_cart/1.png" alt=""></a>
+            <div class="description">
+                <h2>Modèle 1 — Abaya Rose Bordeaux</h2>
+                <p>Abaya bordeaux en tissu fluide avec voile confortable, élégante pour le quotidien.</p>
+                    <button>Shop Now</button>
+            </div>
+        </div>
+    
+
+        <!-- 🔵 CART 2 -->
+        <div class="cart">
+            <a href="#"><img src="image/img_cart/2.png" alt=""></a>
+            <div class="description">
+                <h2>Modèle 2 — Abaya Papillon Gris Foncé</h2>
+                <p>Abaya papillon gris en tissu léger avec voile coordonné, offrant confort et style moderne quotidien.</p>
+                    <button>Shop Now</button>
+            </div>
+        
+        </div>
+
+        <!-- 🔵 CART 3 -->
+        <div class="cart">
+            <a href="#"><img src="image/img_cart/3.png" alt=""></a>
+            <div class="description">
+                <h2>Modèle 3 — Abaya Beige Nude</h2>
+                <p>Abaya beige en tissu doux avec voile assorti, parfaite pour une allure simple et raffinée.</p>
+                    <button>Shop Now</button>
+            </div>
+        </div>
+
+        <!-- 🔵 CART 4 -->
+        <div class="cart">
+            <a href="#"><img src="image/img_cart/4.png" alt=""></a>
+            <div class="description">
+                <h2>Modèle 4 — Abaya Rose Poudré</h2>
+                <p>Abaya rose poudré en tissu premium avec voile assorti, idéale pour un look féminin élégant.</p>
+                    <button>Shop Now</button>
+            </div>
+        </div>
+
+        <!-- 🔵 CART 5 -->
+        <div class="cart">
+            <a href="#"><img src="image/img_cart/5.png" alt=""></a>
+            <div class="description">
+                <h2>Modèle 5 — Abaya Bordeaux Premium</h2>
+                <p>Abaya bordeaux en tissu qualité avec voile assorti, parfaite pour un style chic sophistiqué.</p>
+                    <button>Shop Now</button>
+            </div>
+        </div>
+
+        <!-- 🔵 CART 6 -->
+        <div class="cart">
+            <a href="#"><img src="image/img_cart/6.png" alt=""></a>
+            <div class="description">
+                <h2>Modèle 6 — Abaya Kaki Élégance</h2>
+                <p>Abaya kaki en tissu confortable avec voile assorti, idéale pour un style naturel moderne.</p>
+                    <button>Shop Now</button>
+            </div>
+        </div>
+
+        <!-- 🔵 CART 7 -->
+        <div class="cart">
+            <a href="#"><img src="image/img_cart/7.png" alt=""></a>
+            <div class="description">
+                <h2>Modèle 7 — Abaya Gris Sauge</h2>
+                <p>Abaya gris sauge en tissu léger avec voile coordonné, élégante et agréable au quotidien.</p>
+                    <button>Shop Now</button>
+            </div>
+        </div>
+
+        <!-- 🔵 CART 8 -->
+        <div class="cart">
+            <a href="#"><img src="image/img_cart/8.png" alt=""></a>
+            <div class="description">
+                <h2>Modèle 8 — Abaya Marron Chic</h2>
+                <p>Abaya marron en tissu fluide avec voile assorti, parfaite pour sorties et occasions spéciales.</p>
+                    <button>Shop Now</button>
+            </div>
+        </div>
+
+        <!-- 🔵 CART 9 -->
+        <div class="cart">
+            <a href="#"><img src="image/img_cart/9.png" alt=""></a>
+            <div class="description">
+                <h2>Modèle 9 — Abaya Vert Menthe</h2>
+                <p>Abaya vert menthe en tissu doux avec voile assorti, apportant fraîcheur et élégance.</p>
+                    <button>Shop Now</button>
+            </div>
+        </div>
+
+        <!-- 🔵 CART 10 -->
+        <div class="cart">
+            <a href="#"><img src="image/img_cart/10.png" alt=""></a>
+            <div class="description">
+                <h2>Modèle 10 — Abaya Lavande</h2>
+                <p>Abaya lavande en tissu léger avec voile assorti, idéale pour une tenue féminine raffinée.</p>
+                    <button>Shop Now</button>
+            </div>
+        </div>
+
+
+
+    </div>
+    
+
+    <!-- =========================
+SECTION TITLE
+AVIS CLIENTS
+========================= -->
+<div class="section_bar">
+    <div class="section_title_bar">
+        <span>
+            <i class="fa-solid fa-star"></i>
+        </span>
+        <h2>
+            AVIS CLIENTS
+        </h2>
+    </div>
+
+</div>
+
+
+<!-- =========================
+REVIEWS
+========================= -->
+<section class="reviews">
+    <div class="reviews_container">
+        <div class="review_card">
+            <img src="image/avis/sara.jpg" alt="">
+            <h3>
+                Sara
+            </h3>
+            <div class="stars">
+                ★★★★★
+            </div>
+            <p>
+                Très belle qualité,
+                l'abaya est magnifique.
+            </p>
+        </div>
+
+
+        <div class="review_card">
+            <img src="image/avis/amel.jpg" alt="">
+            <h3>
+                Amel
+            </h3>
+            <div class="stars">
+                ★★★★★
+            </div>
+            <p>
+                Livraison rapide,
+                produit parfait.
+            </p>
+        </div>
+
+
+        <div class="review_card">
+            <img src="image/avis/lina.jpg" alt="">
+            <h3>
+                Lina
+            </h3>
+            <div class="stars">
+                ★★★★☆
+            </div>
+            <p>
+                Une boutique sérieuse
+                avec des modèles élégants.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- =========================
+SECTION CTA
+========================= -->
+<div class="section_bar">
+    <div class="section_title_bar">
+        <span>
+            <i class="fa-solid fa-star"></i>
+        </span>
+        <h2>
+            CALL TO ACTION
+        </h2>
+    </div>
+
+</div>
+<!-- =========================
+CTA SHOP
+========================= -->
+<section class="cta_shop">
+    <div class="cta_image">
+        <img src="image/cta.png" alt="Abaya collection">
+    </div>
+    <div class="cta_text">
+        <span>
+            Nouvelle collection
+        </span>
+        <h2>
+            Trouvez l'abaya
+            qui vous correspond
+        </h2>
+        <p>
+
+            Découvrez notre collection exclusive 
+            d'abayas élégantes, modernes et raffinées.
+            Des modèles pensés pour votre style,
+            votre confort et vos occasions spéciales.
+
+        </p>
+        <div class="cta_features">
+            <div>
+                <i class="fa-solid fa-star"></i>
+                Qualité Premium
+            </div>
+
+            <div>
+                <i class="fa-solid fa-truck"></i>
+                Livraison rapide
+            </div>
+
+            <div>
+                <i class="fa-solid fa-heart"></i>
+                Designs élégants
+            </div>
+
+        </div>
+        <a href="shop.html">
+            Découvrir la collection
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+
+
+    </div>
+</section>
+
+
+    <footer>
+        <div class="container">
+
+            <div class="big_row">
+                <img class="logo_footer" src="image/logo_bg_removed.png" alt="">
+
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, vero?</p>
+
+                <div class="icons_footer">
+                    <a href="#"><i class="fa-solid fa-phone"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Find It Fast</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Laptops & Computers </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Smart Phones & Tablets</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> TV & Audio</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Appliances</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Jewelry & Watches</a>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <h4>Quick Links</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Your Account </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Returns & Exchanges</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Shipping & Delivery</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Estimated Delivery Time</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Purchase Hisotry</a>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <h4>Service us</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Support Center</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Term & Conditions</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Privacy Policy</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Help</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> FAQS</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom_footer">
+            <div class="container">
+                <p>&copy; <span>Abaya Store.</span> All Rights Reserved.</p>
+
+                <div class="payment_img">
+                    <img src="img/payment_method.png" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+<!-- 🔵 comment 
+    <header>
+        <div class="top_header">
+            <div class="container">
+                <a href="#" class="logo"> <img src="img/mina_logo.png" alt=""></a>
+
+                <form action="" class="search_box">
+
+                    <input type="text" name="search" id="search" placeholder="Search for Products" required>
+
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+
+                    
+
+                </form>
+
+        
+    </header>
+
+<div class="container">
+
+  <div class="form-box">
+
+    <h2 id="title">Login</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="submitForm()">Valider</button>
+
+    <p id="msg"></p>
+
+    <p class="switch">
+      <span onclick="toggleForm()">Créer un compte / Se connecter</span>
+    </p>
+
+  </div>
+
+</div>
+-->
+
+<!-- 🔵 BACK TO TOP -->
+
+<a href="#top" class="topButton">
+    <i class="fa-solid fa-arrow-up"></i>
+</a>
+  <script src="JS/main.js"></script>
+</body>
+</html>

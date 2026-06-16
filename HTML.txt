@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Navbar Login Signup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🔵 NAVBAR -->
+<header class="navbar">
+
+  <div class="logo">
+    <img src="img/mina_logo-removebg-preview.png" alt="logo">
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search...">
+  </div>
+
+  <div class="auth-buttons">
+    <button onclick="openLogin()">Log In</button>
+    <button class="signup" onclick="openSignup()">Sign Up</button>
+  </div>
+
+</header>
+
+
+<!-- 🔵 POPUP LOGIN -->
+<div id="loginModal" class="modal">
+  <div class="modal-box">
+    <h2>Login</h2>
+    <input type="text" id="loginUser" placeholder="Username">
+    <input type="password" id="loginPass" placeholder="Password">
+    <button onclick="login()">Se connecter</button>
+    <span onclick="closeModal()">Fermer</span>
+  </div>
+</div>
+
+<!-- 🔵 POPUP SIGNUP -->
+<div id="signupModal" class="modal">
+  <div class="modal-box">
+    <h2>Sign Up</h2>
+    <input type="text" id="signupUser" placeholder="Username">
+    <input type="password" id="signupPass" placeholder="Password">
+    <button onclick="signup()">Créer compte</button>
+    <span onclick="closeModal()">Fermer</span>
+  </div>
+</div>
+
+
+<!-- 🔵 POPUP SIGNUP 
+    <header>
+        <div class="top_header">
+            <div class="container">
+                <a href="#" class="logo"> <img src="img/mina_logo.png" alt=""></a>
+
+                <form action="" class="search_box">
+
+                    <input type="text" name="search" id="search" placeholder="Search for Products" required>
+
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+
+                    
+
+                </form>
+
+        
+    </header>
+
+<div class="container">
+
+  <div class="form-box">
+
+    <h2 id="title">Login</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="submitForm()">Valider</button>
+
+    <p id="msg"></p>
+
+    <p class="switch">
+      <span onclick="toggleForm()">Créer un compte / Se connecter</span>
+    </p>
+
+  </div>
+
+</div>
+-->
+
+  <script src="main.js"></script>
+</body>
+</html>
